@@ -26,3 +26,14 @@ async def function_2():
         
 
 await function_2()
+---
+    await asyncio.sleep(1)
+    return "hello_a"
+async def func_b():
+    await asyncio.sleep(1)
+    return "hello_b"
+a, b = await asyncio.gather(func_a(), func_b())
+print(a)
+print(b)
+hello_a
+hello_b
